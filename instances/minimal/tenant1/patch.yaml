@@ -1,0 +1,9 @@
+- op: replace
+  path: /spec/credsSecret/name
+  value: minimal-tenant1-minio
+- op: add
+  path: /spec/selector/matchLabels/app.kubernetes.io~1instance
+  value: minimal-tenant1
+- op: add
+  path: /spec/metadata/labels/app.kubernetes.io~1instance
+  value: minimal-tenant1
