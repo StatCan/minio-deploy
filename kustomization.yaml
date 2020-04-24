@@ -27,4 +27,3 @@ bases:
 - instances/minimal/tenant1
 # - instances/minimal/tenant2
 # - instances/minimal/tenant3
-# - instances/pachyderm/tenant1
