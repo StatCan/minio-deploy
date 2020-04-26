@@ -30,6 +30,12 @@ jobs:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
         cluster-name: ${{ env.CLUSTER_NAME }}
         resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+    - name: Write Kubeconfig
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        mkdir -p /home/runner/work/_temp/_github_home/.kube
+        echo "$KUBECONFIG" | base64 --decode > /home/runner/work/_temp/_github_home/.kube/config
     - name: Kustomize
       uses: statcan/minio@master
       env:
