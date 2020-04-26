@@ -32,7 +32,7 @@ jobs:
         resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
     - uses: azure/setup-kubectl@v1
       with:
-        version: '1.15.10'
+        version: 'v1.15.10'
     - name: Kustomize
       env:
         MINIMAL_TENANT_1="${{ secrets.MINIMAL_TENANT_1 }}"
