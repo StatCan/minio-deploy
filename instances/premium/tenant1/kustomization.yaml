@@ -7,11 +7,11 @@ kind: Kustomization
 namespace: minio
 
 # Adds namespace to all resources.
-namePrefix: minimal-tenant3-
+namePrefix: premium-tenant1-
 
 # Labels to add to all resources and selectors.
 commonLabels:
-  app.kubernetes.io/instance: minimal-tenant3
+  app.kubernetes.io/instance: premium-tenant1
 
 # Each entry in this list should resolve to a directory
 # containing a kustomization file, else the
@@ -67,11 +67,17 @@ secretGenerator:
 #   value: new value
 patchesJson6902:
 - target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    name: minio
+  path: patch-ing.yml
+- target:
     group: miniocontroller.min.io
     version: v1beta1
     kind: MinIOInstance
     name: minio
-  path: patch.yaml
+  path: patch-minio.yaml
 
 # generatorOptions modify behavior of all ConfigMap and Secret generators
 generatorOptions:

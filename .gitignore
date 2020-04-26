@@ -1,1 +1,5 @@
+.cache
+.env
+.vscode
+kustomize
 secret.txt

@@ -1,9 +1,0 @@
-- op: replace
-  path: /spec/credsSecret/name
-  value: pachyderm-tenant2-minio
-- op: add
-  path: /spec/selector/matchLabels/app.kubernetes.io~1instance
-  value: pachyderm-tenant2
-- op: add
-  path: /spec/metadata/labels/app.kubernetes.io~1instance
-  value: pachyderm-tenant2

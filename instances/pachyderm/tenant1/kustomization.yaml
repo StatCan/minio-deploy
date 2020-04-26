@@ -67,11 +67,17 @@ secretGenerator:
 #   value: new value
 patchesJson6902:
 - target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    name: minio
+  path: patch-ing.yml
+- target:
     group: miniocontroller.min.io
     version: v1beta1
     kind: MinIOInstance
     name: minio
-  path: patch.yaml
+  path: patch-minio.yaml
 
 # generatorOptions modify behavior of all ConfigMap and Secret generators
 generatorOptions:

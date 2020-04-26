@@ -1,9 +1,12 @@
 - op: replace
   path: /spec/credsSecret/name
-  value: minimal-tenant3-minio
+  value: pachyderm-tenant1-minio
+- op: replace
+  path: /spec/volumeClaimTemplate/spec/resources/requests/storage
+  value: 1000Gi
 - op: add
   path: /spec/selector/matchLabels/app.kubernetes.io~1instance
-  value: minimal-tenant3
+  value: pachyderm-tenant1
 - op: add
   path: /spec/metadata/labels/app.kubernetes.io~1instance
-  value: minimal-tenant3
+  value: pachyderm-tenant1
