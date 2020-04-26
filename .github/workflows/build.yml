@@ -30,10 +30,8 @@ jobs:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
         cluster-name: ${{ env.CLUSTER_NAME }}
         resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
-    - uses: azure/setup-kubectl@v1
-      with:
-        version: 'v1.15.10'
     - name: Kustomize
+      uses: statcan/minio@master
       env:
         MINIMAL_TENANT_1: "${{ secrets.MINIMAL_TENANT_1 }}"
         PACHYDERM_TENANT_1: "${{ secrets.PACHYDERM_TENANT_1 }}"
@@ -41,6 +39,3 @@ jobs:
         MINIO_IDENTITY_OPENID_CLIENT_ID: "${{ secrets.MINIO_IDENTITY_OPENID_CLIENT_ID }}"
         MINIO_IDENTITY_OPENID_CONFIG_URL: "${{ secrets.MINIO_IDENTITY_OPENID_CONFIG_URL }}"
         MINIO_DOMAIN_NAME: "${{ secrets.MINIO_DOMAIN_NAME }}"
-      run: |
-        ./params.sh
-        kubectl apply -k .
