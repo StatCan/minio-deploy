@@ -35,12 +35,12 @@ jobs:
         version: 'v1.15.10'
     - name: Kustomize
       env:
-        MINIMAL_TENANT_1="${{ secrets.MINIMAL_TENANT_1 }}"
-        PACHYDERM_TENANT_1="${{ secrets.PACHYDERM_TENANT_1 }}"
-        PREMIUM_TENANT_1="${{ secrets.PREMIUM_TENANT_1 }}"
-        MINIO_IDENTITY_OPENID_CLIENT_ID="${{ secrets.MINIO_IDENTITY_OPENID_CLIENT_ID }}"
-        MINIO_IDENTITY_OPENID_CONFIG_URL="${{ secrets.MINIO_IDENTITY_OPENID_CONFIG_URL }}"
-        MINIO_DOMAIN_NAME="${{ secrets.MINIO_DOMAIN_NAME }}"
+        MINIMAL_TENANT_1: "${{ secrets.MINIMAL_TENANT_1 }}"
+        PACHYDERM_TENANT_1: "${{ secrets.PACHYDERM_TENANT_1 }}"
+        PREMIUM_TENANT_1: "${{ secrets.PREMIUM_TENANT_1 }}"
+        MINIO_IDENTITY_OPENID_CLIENT_ID: "${{ secrets.MINIO_IDENTITY_OPENID_CLIENT_ID }}"
+        MINIO_IDENTITY_OPENID_CONFIG_URL: "${{ secrets.MINIO_IDENTITY_OPENID_CONFIG_URL }}"
+        MINIO_DOMAIN_NAME: "${{ secrets.MINIO_DOMAIN_NAME }}"
       run: |
         ./params.sh
         kubectl apply -k .
