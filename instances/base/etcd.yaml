@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: etcd
-        image: quay.io/coreos/etcd:v3.4.7
+        image: zachomedia/etcd:3.4.7
         imagePullPolicy: Always
         ports:
         - containerPort: 2380
@@ -95,7 +95,7 @@ spec:
                     --data-dir /var/run/etcd/default.etcd
             fi
             # etcd-SET_ID
-            SET_ID=${HOSTNAME:5:${#HOSTNAME}}
+            SET_ID=${HOSTNAME:$((${#HOSTNAME}-1)):${#HOSTNAME}}
             # adding a new member to existing cluster (assuming all initial pods are available)
             if [ "${SET_ID}" -ge ${INITIAL_CLUSTER_SIZE} ]; then
                 export ETCDCTL_ENDPOINT=$(eps)
