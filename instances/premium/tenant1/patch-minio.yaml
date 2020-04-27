@@ -13,6 +13,3 @@
 - op: add
   path: /spec/volumeClaimTemplate/storageClassName
   value: managed-premium
-- op: replace
-  path: /spec/env/4/value
-  value: http://premium-tenant1-etcd:2379

@@ -128,8 +128,6 @@ spec:
       value: "XXXXX"
     - name: MINIO_IDENTITY_OPENID_CONFIG_URL
       value: "https://login.microsoftonline.com/XXXXX/v2.0/.well-known/openid-configuration"
-    - name: MINIO_ETCD_ENDPOINTS
-      value: "http://etcd:2379"
     # - name: MINIO_STORAGE_CLASS_RRS
     #   value: "EC:2"
   ## Configure resource requests and limits for MinIO containers
