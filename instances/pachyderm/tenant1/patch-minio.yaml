@@ -10,3 +10,6 @@
 - op: add
   path: /spec/metadata/labels/app.kubernetes.io~1instance
   value: pachyderm-tenant1
+- op: replace
+  path: /spec/env/4/value
+  value: http://pachyderm-tenant1-etcd:2379
