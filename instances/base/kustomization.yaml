@@ -10,3 +10,4 @@ kind: Kustomization
 # markers ("---").
 resources:
 - minio.yaml
+- etcd.yaml
