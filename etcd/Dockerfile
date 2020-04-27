@@ -12,6 +12,6 @@ RUN mkdir /etcd && \
     apk del --purge tar openssl && \
     rm -Rf etcd-v${ETCD_VERSION}-linux-amd64* /var/cache/apk/*
 RUN chmod g=u /etc/passwd
-#USER 1001
+USER 1001
 VOLUME /data
 EXPOSE 2379 2380
