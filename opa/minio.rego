@@ -53,7 +53,7 @@ allow {
 }
 
 allow {
-  username := split(lower(input.claims.preferred_username),"@")[0]
+  username := replace(split(lower(input.claims.preferred_username),"@")[0], ".", "-")
   input.bucket == username
   permissions := rl_permissions["user"]
   p := permissions[_]
@@ -61,7 +61,7 @@ allow {
 }
 
 allow {
-  username := split(lower(input.claims.preferred_username),"@")[0]
+  username := replace(split(lower(input.claims.preferred_username),"@")[0], ".", "-")
   input.bucket == "shared"
   url := concat("/", [username,".*$"] )
   re_match( url , input.object)
