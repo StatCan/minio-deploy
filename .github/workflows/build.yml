@@ -26,10 +26,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    # Run params.sh
-    - run: |
-        ./params.sh
-
     # Run Kustomize
     - name: kustomize
       uses: statcan/actions/kubectl@master
