@@ -26,17 +26,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    # Get Kubeconfig Context
-    - name: Write Kubeconfig
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-      run: |
-        mkdir -p /home/runner/work/_temp/_github_home/.kube
-        echo "$KUBECONFIG" | base64 --decode > /home/runner/work/_temp/_github_home/.kube/config
+    # Run params.sh
+    - run: |
+        ./params.sh
 
     # Run Kustomize
-    - name: Kustomize
-      uses: statcan/actions/kustomize@master
+    - name: kustomize
+      uses: statcan/actions/kubectl@master
+      with:
+        kubeconfig: ${{ secrets.KUBECONFIG }}
+        args: apply -k .
       env:
         MINIMAL_TENANT_1: "${{ secrets.MINIMAL_TENANT_1 }}"
         PACHYDERM_TENANT_1: "${{ secrets.PACHYDERM_TENANT_1 }}"
