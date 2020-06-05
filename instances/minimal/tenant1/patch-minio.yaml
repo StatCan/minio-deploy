@@ -7,3 +7,6 @@
 - op: add
   path: /spec/metadata/labels/app.kubernetes.io~1instance
   value: minimal-tenant1
+- op: replace
+  path: /spec/volumeClaimTemplate/spec/resources/requests/storage
+  value: 1000Gi
