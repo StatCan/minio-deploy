@@ -31,7 +31,7 @@ rl_permissions := {
 }
 
 allow {
-  root = ["minimal-tenant1", "pachyderm-tenant1", "premium-tenant1"]
+  root = ["minimal-tenant1", "premium-tenant1"]
   input.account == root[_]
 }
 

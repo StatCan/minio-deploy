@@ -2,11 +2,9 @@
 
 # Minio Default Credentials
 export MINIMAL_TENANT_1="${MINIMAL_TENANT_1:=DEFAULT}"
-export PACHYDERM_TENANT_1="${PACHYDERM_TENANT_1:=DEFAULT}"
 export PREMIUM_TENANT_1="${PREMIUM_TENANT_1:=DEFAULT}"
 
 envsubst < instances/minimal/tenant1/secret.tmpl > instances/minimal/tenant1/secret.txt
-envsubst < instances/pachyderm/tenant1/secret.tmpl > instances/pachyderm/tenant1/secret.txt
 envsubst < instances/premium/tenant1/secret.tmpl > instances/premium/tenant1/secret.txt
 
 # Minio OIDC

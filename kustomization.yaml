@@ -25,5 +25,4 @@ namespace: minio
 # etc. that differ from the common base).
 bases:
 - instances/minimal/tenant1
-- instances/pachyderm/tenant1
 - instances/premium/tenant1
