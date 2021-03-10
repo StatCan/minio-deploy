@@ -1,3 +1,6 @@
+**This repository has been deprecated in favour of
+[StatCan/minio-operator](https://github.com/StatCan/minio-operator/).**
+
 # Minio
 
 MinIO platform configuration leveraging Kustomize and OPA.
